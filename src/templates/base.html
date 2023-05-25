@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Главная</h1>
+    <button><a href="{% url 'add_c'%}">Добавить категорию</a></button>
+    <a href="{% url 'done_tasks' %}">Выполненные</a>
+    {% for category in categories %}
+    <table>
+        <td><a href="{% url 'tasks' category.id %}">{{category.title}}</a></td>
+        <td><a href="{% url 'c_del' category.id %}">Удалить</a></td>
+    </table>
+    {% endfor %}
+</body>
+</html>
